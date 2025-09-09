@@ -15,12 +15,10 @@ import CalculateOutlinedIcon from "@mui/icons-material/CalculateOutlined";
 import ScienceOutlinedIcon from "@mui/icons-material/ScienceOutlined";
 import SmartToyOutlinedIcon from "@mui/icons-material/SmartToyOutlined";
 import { Smartphone } from "lucide-react";
-// import queryString from "@/utils/queryString";
 // import Guild from "discord-api-types";
 import { APIGuild } from "discord-api-types/v10";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-// import DiscordMembers from "../components/DiscordMembers";
 import Head from "../components/Head";
 import bluelightLogo from "../../public/assets/img/logos/bluelight.jpg";
 import seiLogo from "../../public/assets/img/logos/sei.png";
@@ -30,9 +28,7 @@ import mapsLogo from "../../public/assets/img/logos/maps.png";
 import dancesafeLogo from "../../public/assets/img/logos/dancesafeYellow.png";
 import comboChart from "../../public/assets/img/comboChart.png";
 import logo from "../../public/assets/img/logo.png";
-// import Ghost from "../components/Ghost";
 import Particles from "../components/Particles";
-// import Appeal from "../components/Appeal";
 import Counter from "../components/Counter";
 
 // Import Swiper styles
@@ -116,29 +112,6 @@ async function getDiscordMetrics() {
   };
 }
 
-// function getOauthURL() {
-//   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-//   // const [stateParam, setStateParam] = useState("");
-//   // const [oAuthUrl, setOAuthUrl] = useState("");
-//   console.log(
-//     `GetOauthURL - DISCORD_CLIENT_ID: ${process.env.DISCORD_CLIENT_ID}`,
-//   );
-
-//   const loginParams = {
-//     client_id: process.env.DISCORD_CLIENT_ID as string,
-//     redirect_uri: `https://${process.env.DNS_DOMAIN}/#appeal`,
-//     response_type: "token",
-//     scope: "identify",
-//     state: stateParam as string,
-//   };
-//   setOAuthUrl(
-//     `https://discord.com/api/oauth2/authorize${queryString(loginParams)}`,
-//   );
-
-//   return {
-//     props: { oAuthUrl },
-//   };
-// }
 
 async function getSubredditMetrics() {
   let subredditMetrics = {};

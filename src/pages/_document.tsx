@@ -8,9 +8,8 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          {/* <!-- Favicons --> */}
-          <link href="assets/img/favicon.png" rel="icon" />
-          <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+          {/* <!-- Favicon --> */}
+          <link href="/favicon.ico" rel="icon" />
 
           {/* <!-- Google Fonts --> */}
           <link
@@ -20,26 +19,14 @@ class MyDocument extends Document {
         </Head>
         <body>
           <Main />
-          {/* <!-- Vendor JS Files --> */}
-          <Script src="assets/vendor/aos/aos.js"></Script>
-          <Script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></Script>
-          <Script src="assets/vendor/glightbox/js/glightbox.min.js"></Script>
-          <Script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></Script>
-          <Script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></Script>
-          {/* <Script src="assets/vendor/swiper/swiper-bundle.min.js"></Script> */}
-          <Script src="assets/vendor/php-email-form/validate.js"></Script>
-
-          {/* <!-- Template Main JS File --> */}
-          <Script src="assets/js/main.js"></Script>
+          {/* <!-- Vendor/Template JS Files (minimal) --> */}
+          <Script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></Script>
+          {/* Template main behaviors for navbar/back-to-top */}
+          <Script src="/assets/js/main.js"></Script>
 
           <NextScript />
 
-          {/* AOS (Animate On Scroll) */}
-          <link
-            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-            rel="stylesheet"
-          />
-          <Script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></Script>
+          {/* AOS is initialized in _app via CSS import and AOS.init() */}
         </body>
       </Html>
     );

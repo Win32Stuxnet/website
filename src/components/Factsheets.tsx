@@ -30,15 +30,9 @@ import {
 } from "@mui/material";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import RefreshIcon from "@mui/icons-material/Refresh";
-import {
-  QueryClient,
-  QueryClientProvider,
-  keepPreviousData,
-  useQuery,
-} from "@tanstack/react-query"; // note: this is TanStack Rea`ct Query V5
+import { keepPreviousData, useQuery } from "@tanstack/react-query"; // note: this is TanStack React Query V5
 import { Category, Drug } from "tripsit_drug_db";
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFnsV3";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+// Providers are handled at the app level
 import Grid from "@mui/material/Grid";
 import KofiButton from "kofi-button";
 import UnfoldMoreDoubleIcon from "@mui/icons-material/UnfoldMoreDouble";
@@ -417,13 +411,4 @@ const Factsheets = () => {
   return <MaterialReactTable table={table} data-bs-theme="dark" />;
 };
 
-const ExamplePage = () => (
-  // App.tsx or AppProviders file. Don't just wrap this component with QueryClientProvider! Wrap your whole App!
-  <LocalizationProvider dateAdapter={AdapterDateFns}>
-    <QueryClientProvider client={new QueryClient()}>
-      <Factsheets />
-    </QueryClientProvider>
-  </LocalizationProvider>
-);
-
-export default ExamplePage;
+export default Factsheets;
