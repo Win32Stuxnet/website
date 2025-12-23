@@ -39,10 +39,10 @@ The preferred way to have full control (and perhaps more resources) is local dev
 1) Git clone the repo
 2) Install dependencies with `npm install`
 
----
-> [!WARNKNG]
+
+> [!WARNING]
 > WINDOWS USERS MIGHT HAVE TO ADJUST DEPENDENCIES LOCALLY AS WITH TRY INSTALLING NVM THROUGH WINGET > IF PROBLEMS OCCUR
----
+
 Then you have two choices:
 
 #### Docker Deployment
