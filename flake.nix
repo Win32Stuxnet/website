@@ -63,10 +63,10 @@
             # Helper function to check if in Nix environment
             check-nix-env() {
               if [ -n "$IN_NIX_SHELL" ]; then
-                echo "✅ You ARE in the Nix development environment"
+                echo "You ARE in the Nix development environment"
                 echo "   IN_NIX_SHELL=$IN_NIX_SHELL"
               else
-                echo "❌ You are NOT in the Nix development environment"
+                echo "You are NOT in the Nix development environment"
                 echo "   Run 'nix develop' to enter it"
               fi
             }
