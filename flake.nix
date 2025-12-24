@@ -20,7 +20,7 @@
           docker
           docker-compose
           postgresql_16
-          pgadmin
+          pgadmin4
           neovim
           git
           curl
@@ -57,6 +57,19 @@
             echo "  pg_ctl stop    - Stop PostgreSQL server"
             echo "  pgadmin4       - Launch pgAdmin web interface"
             echo ""
+            echo "💡 Tip: Run 'check-nix-env' to verify you're in the Nix environment"
+            echo ""
+            
+            # Helper function to check if in Nix environment
+            check-nix-env() {
+              if [ -n "$IN_NIX_SHELL" ]; then
+                echo "✅ You ARE in the Nix development environment"
+                echo "   IN_NIX_SHELL=$IN_NIX_SHELL"
+              else
+                echo "❌ You are NOT in the Nix development environment"
+                echo "   Run 'nix develop' to enter it"
+              fi
+            }
             
             # Set NODE_OPTIONS for debugging if needed
             export NODE_OPTIONS="--inspect"
