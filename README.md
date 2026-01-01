@@ -12,7 +12,7 @@ I. I. ## Table of Contents
       - [Local Deployment](#local-deployment)
 
 ---!
-Welcome to TripSit's Main Website, brought to you by THC.
+Welcome to TripSit's Main Website, Harm Reduction Through Education.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
