@@ -38,7 +38,7 @@
           # pure = true; 
 
           shellHook = ''
-            echo "🚀 Website Development Environment"
+            echo " Website Development Environment"
             echo "Node.js version: $(node --version)"
             echo "npm version: $(npm --version)"
             echo "Neovim version: $(nvim --version | head -n1)"
@@ -57,7 +57,7 @@
             echo "  pg_ctl stop    - Stop PostgreSQL server"
             echo "  pgadmin4       - Launch pgAdmin web interface"
             echo ""
-            echo "💡 Tip: Run 'check-nix-env' to verify you're in the Nix environment"
+            echo " Tip: Run 'check-nix-env' to verify you're in the Nix environment"
             echo ""
             
             # Helper function to check if in Nix environment
