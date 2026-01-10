@@ -61,11 +61,10 @@ The preferred way to have full control (and perhaps more resources) is local dev
 > **Local development is not supported officially in this way**:
 > WINDOWS USERS MIGHT HAVE TO ADJUST DEPENDENCIES LOCALLY AS WITH TRY INSTALLING NVM THROUGH WINGET > IF PROBLEMS OCCUR
 ---
-Then you have two choices:
 
 ## Docker Deployment
 
-The preferred way to deploy is with docker.
+**The preferred way** to deploy is with docker.
 This ensures that we're running on the same system with no conflicts.
 
 1) Run the `npm run website` command to build the docker image
