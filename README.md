@@ -11,8 +11,9 @@ I. I. ## Table of Contents
   - [Local development](#local-development)
   - [Docker Deployment](#docker-deployment)
 
+
 ---!
-Welcome to TripSit's Main Website, brought to you by THC.
+Welcome to TripSit's Main Website, brought to you by your friends at Tripsit!
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -59,7 +60,7 @@ The preferred way to have full control (and perhaps more resources) is local dev
 ---
 > [!WARNING]
 > **Local development is not supported officially in this way**:
-> WINDOWS USERS MIGHT HAVE TO ADJUST DEPENDENCIES LOCALLY AS WITH TRY INSTALLING NVM THROUGH WINGET > IF PROBLEMS OCCUR
+> WINDOWS USERS MIGHT HAVE TO ADJUST DEPENDENCIES LOCALLY AS WITH TRY INSTALLING NVM THROUGH WINGET  IF PROBLEMS OCCUR
 ---
 
 ## Docker Deployment
