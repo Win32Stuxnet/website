@@ -2,15 +2,12 @@
 
 I. I. ## Table of Contents
 
----- [TripSit's Website](#tripsits-website)
-
 - [TripSit's Website](#tripsits-website)
   - [Development - Getting Started](#development---getting-started)
     - [Codespace](#codespace)
   - [Local dev env](#local-dev-env)
   - [Local development](#local-development)
   - [Docker Deployment](#docker-deployment)
-
 
 ---!
 Welcome to TripSit's Main Website, brought to you by your friends at Tripsit!
