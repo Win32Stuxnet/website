@@ -28,7 +28,7 @@ import {
   Card,
   CardContent,
 } from "@mui/material";
-import { Accordion, AccordionItem } from "@nextui-org/react";
+import { Accordion, AccordionItem } from "@heroui/react";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import {
   QueryClient,
