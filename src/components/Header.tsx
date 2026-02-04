@@ -1,16 +1,46 @@
 import Image from "next/image";
 import { Tooltip } from "@mui/material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "../../public/assets/img/logo.png";
 import ProfileButton from "./ProfileButton";
 
 function Header() {
   const domain = process.env.NEXT_PUBLIC_DNS_DOMAIN || "tripsit.me";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
+    setActiveDropdown(null);
   };
+
+  const toggleDropdown = (dropdownId: string) => {
+    setActiveDropdown(activeDropdown === dropdownId ? null : dropdownId);
+  };
+
+  // Close mobile menu on window resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 991 && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+        setActiveDropdown(null);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [mobileMenuOpen]);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <header
@@ -52,8 +82,16 @@ function Header() {
                   About
                 </a>
               </li>
-              <li className="nav-link scrollto dropdown">
-                <a href={`https://${domain}#resources`}>
+              <li className={`nav-link scrollto dropdown ${activeDropdown === "resources" ? "dropdown-active" : ""}`}>
+                <a 
+                  href={`https://${domain}#resources`}
+                  onClick={(e) => {
+                    if (mobileMenuOpen) {
+                      e.preventDefault();
+                      toggleDropdown("resources");
+                    }
+                  }}
+                >
                   <span>Resources</span> <i className="bi bi-chevron-down"></i>
                 </a>
                 <ul>
@@ -177,8 +215,16 @@ function Header() {
                   </li>
                 </ul>
               </li>
-              <li className="dropdown">
-                <a href={`https://wiki.${domain}/wiki/Category:Guides`}>
+              <li className={`dropdown ${activeDropdown === "guides" ? "dropdown-active" : ""}`}>
+                <a 
+                  href={`https://wiki.${domain}/wiki/Category:Guides`}
+                  onClick={(e) => {
+                    if (mobileMenuOpen) {
+                      e.preventDefault();
+                      toggleDropdown("guides");
+                    }
+                  }}
+                >
                   <span>Guides</span> <i className="bi bi-chevron-down"></i>
                 </a>
                 <ul>
@@ -392,6 +438,24 @@ function Header() {
         .navbar-mobile .joindiscord,
         .navbar-mobile .joindiscord:focus {
           margin: 15px;
+        }
+        
+        @media (max-width: 991px) {
+          .dropdown.dropdown-active > ul {
+            display: block !important;
+            animation: slideDown 0.3s ease;
+          }
+          
+          @keyframes slideDown {
+            from {
+              opacity: 0;
+              transform: translateY(-10px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
         }
       `}</style>
     </header>
