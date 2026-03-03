@@ -1,4 +1,3 @@
-/* eslint-disable arrow-parens */
 import Image from "next/image";
 import React from "react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
@@ -15,12 +14,9 @@ import CalculateOutlinedIcon from "@mui/icons-material/CalculateOutlined";
 import ScienceOutlinedIcon from "@mui/icons-material/ScienceOutlined";
 import SmartToyOutlinedIcon from "@mui/icons-material/SmartToyOutlined";
 import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined";
-// import queryString from "@/utils/queryString";
-// import Guild from "discord-api-types";
 import { APIGuild } from "discord-api-types/v10";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-// import DiscordMembers from "../components/DiscordMembers";
 import Head from "../components/Head";
 import bluelightLogo from "../../public/assets/img/logos/bluelight.jpg";
 import seiLogo from "../../public/assets/img/logos/sei.png";
@@ -32,7 +28,6 @@ import comboChart from "../../public/assets/img/comboChart.png";
 import logo from "../../public/assets/img/logo.png";
 import Ghost from "../components/Ghost";
 import Particles from "../components/Particles";
-// import Appeal from "../components/Appeal";
 import Counter from "../components/Counter";
 
 // Import Swiper styles
@@ -97,7 +92,6 @@ async function getDiscordMetrics() {
   const guildId = "179641883222474752";
 
   const url = `${baseUrl}/guilds/${guildId}?with_counts=true`;
-  // console.log("Fetching metrics from:", url);
 
   try {
     const response = await axios.get(url, {
@@ -106,39 +100,14 @@ async function getDiscordMetrics() {
       },
     });
     guild = response.data;
-    // console.log("Discord metrics:", guildMetrics);
   } catch (error) {
-    // console.error("Error fetching guild metrics:", error);
+    // Discord API fetch failed — guild will be empty
   }
 
   return {
     props: { guild },
   };
 }
-
-// function getOauthURL() {
-//   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-//   // const [stateParam, setStateParam] = useState("");
-//   // const [oAuthUrl, setOAuthUrl] = useState("");
-//   console.log(
-//     `GetOauthURL - DISCORD_CLIENT_ID: ${process.env.DISCORD_CLIENT_ID}`,
-//   );
-
-//   const loginParams = {
-//     client_id: process.env.DISCORD_CLIENT_ID as string,
-//     redirect_uri: `https://${process.env.DNS_DOMAIN}/#appeal`,
-//     response_type: "token",
-//     scope: "identify",
-//     state: stateParam as string,
-//   };
-//   setOAuthUrl(
-//     `https://discord.com/api/oauth2/authorize${queryString(loginParams)}`,
-//   );
-
-//   return {
-//     props: { oAuthUrl },
-//   };
-// }
 
 async function getSubredditMetrics() {
   let subredditMetrics = {};
@@ -147,7 +116,6 @@ async function getSubredditMetrics() {
   const subreddit = "tripsit";
 
   const url = `${baseUrl}/r/${subreddit}/about`;
-  // console.log("Fetching metrics from:", url);
 
   try {
     const response = await axios.get(url, {
@@ -157,13 +125,8 @@ async function getSubredditMetrics() {
       },
     });
     subredditMetrics = response.data;
-    // console.log("subredditMetrics:", subredditMetrics);
   } catch (error) {
-    // console.error("Error fetching subredditMetrics:");
-    // console.error((error as any).code);
-    // console.error((error as any).response.status);
-    // console.error((error as any).response.statusText);
-    // console.error(process.env.REDDIT_BOT_TOKEN);
+    // Reddit API fetch failed — metrics will be empty
   }
 
   return {
