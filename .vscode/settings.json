@@ -200,7 +200,6 @@
         "connectionId": "https-sonar-tripsit-me",
         "projectKey": "TripSit_website_AYoAUAAYALmA62is8Npk"
     },
-    "github.copilot.advanced": {},
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
